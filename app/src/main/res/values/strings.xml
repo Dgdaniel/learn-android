@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyNote</string>
+    <string name="lorem"><![CDATA[Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis quasi ad,voluptatum qualm architecto eaque nam aspernatur vitae animi? Natus ipsam error reiciendis veniam officia quod nam odio veritatis? /> </RelativeLayout> </androidx.cardview.widget.CardView> </RelativeLayout>]]></string>
+    <string name="save">Save</string>
+</resources>
