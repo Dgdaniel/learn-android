@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,13 +40,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private val resultContracts = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
     { result : ActivityResult ->
 
-        if(it.resultCode == Activity.RESULT_OK || it.data == null){
+        if(result.resultCode == Activity.RESULT_OK || result.data == null){
 
             return@registerForActivityResult
         }
 
-        when(it.data?.extras?.getInt("request_code")){
-            DetailsActivity.REQUEST_EDIT_NOTE -> processEditNoteResult()
+        when(result.data?.extras?.getInt("request_code")){
+            DetailsActivity.REQUEST_EDIT_NOTE -> processEditNoteResult(result.data!!)
         }
     }
     override fun onClick(v: View) {
